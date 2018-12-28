@@ -25,6 +25,10 @@ class QuoteRUDView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Quote.objects.all()
 
 
+# class QuoteRatesListView(generics.RetrieveAPIView):
+#     serializer_class = QuoteRatesSerializer
+
+
 # class QuoteListView(generics.ListAPIView):
 #     serializer_class = QuoteSerializer
 #     renderer_classes = [TemplateHTMLRenderer]

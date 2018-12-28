@@ -17,3 +17,6 @@ class QuoteSerializer(serializers.ModelSerializer):
 
     # def create(self, validated_data):
         # return Quote.objects.create(**validated_data)
+
+
+# class QuoteRatesSerializer(serializers.ModelSerializer):
