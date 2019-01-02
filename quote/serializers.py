@@ -6,17 +6,26 @@ from quote.models import Quote
 
 
 class QuoteSerializer(serializers.ModelSerializer):
-    # source = HubQuoteSerializer()
-    # destination = HubQuoteSerializer()
-    # asset = AssetQuoteSerializer()
 
     class Meta:
         model = Quote
-        # fields = ('source', 'destination', 'asset')
-        fields = ('__all__')
+        fields = ('id',
+                  'source',
+                  'destination',
+                  'asset',
+                  'weight',
+                  'cargo_description')
 
-    # def create(self, validated_data):
-        # return Quote.objects.create(**validated_data)
+    def create(self, validated_data):
+        return Quote.objects.create(**validated_data)
 
 
-# class QuoteRatesSerializer(serializers.ModelSerializer):
+class QuoteListSerializer(serializers.ModelSerializer):
+    source = HubQuoteSerializer()
+    destination = HubQuoteSerializer()
+    asset = AssetQuoteSerializer()
+
+    class Meta:
+        model = Quote
+        fields = ('__all__',)
+

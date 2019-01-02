@@ -49,9 +49,22 @@
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Source" title="Type source name">
 
 <ul id="myUL">
-    {%  for quote in quotes %}
-  <li><a href="#">Andheri</a></li>
-  <li><a href="#">Nhava Sheva</a></li>
+    {%  for s in src %}
+  <li><a href="#">{{ s }}</a></li>
+{#  <li><a href="#">Nhava Sheva</a></li>#}
+{#    {% for hub in hubs %}#}
+{#    <li>{{ hub}}</li>#}
+{#    {% endfor %}#}
+
+    {%  endfor %}
+</ul>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Destination" title="Type destination name">
+
+<ul id="myUL">
+    {%  for d in dest %}
+  <li><a href="#">{{ d }}</a></li>
+{#  <li><a href="#">Nhava Sheva</a></li>#}
 {#    {% for hub in hubs %}#}
 {#    <li>{{ hub}}</li>#}
 {#    {% endfor %}#}
